@@ -1,0 +1,41 @@
+body{
+    background-image: url("../file/iu.png");
+}
+.container {
+    margin-left: 40%;
+    margin-top: 3%;
+    background: #bce8f1;
+    opacity: 0.9;
+    width: 400px;
+    height: 700px;
+}
+.form-group{
+    width: 300px;
+    margin-left: 10px;
+    margin-top: 11px;
+}
+.registerSpan{
+    font-size: 17px;
+    color: blue;
+}
+*{
+    text-decoration: none;
+}
+.loginHref{
+    color: darkblue;
+    margin-left: 170px;
+}
+p {
+    margin-left: 9px;
+    color: red;
+}
+.signBtn {
+    width: 250px;
+    height: 40px;
+    border-radius: 3px;
+    color: orange;
+    opacity: 0.5;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    margin-left: 50px;
+    margin-top: 20px;
+}

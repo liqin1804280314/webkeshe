@@ -1,0 +1,29 @@
+ul {
+    width: 500px;
+    right: 0px;
+    list-style: none;
+    position: absolute;
+    font-size: 22px;
+
+}
+
+li {
+    display: inline-block;
+    *display: inline-block;
+    *zoom: 1;
+    color:#323232;
+}
+
+a{
+    text-decoration: none;
+}
+.main{
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.userInfo {
+    position: absolute;
+    right: 30px;
+}

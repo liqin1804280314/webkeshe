@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script type="text/javascript" src="js/login.js"></script>
+</head>
+<body>
+
+<center>
+    <div class="box">
+<!--        <form action="LoginController.do" method="get" accept-charset="UTF-8">-->
+            <input type="text" placeholder="username" id="userName" class="uT" onblur="checkNull(this)" name="用户名">
+        <span id="userNameError" ></span>
+            <br>
+            <input type="text" placeholder="password" id="password" class="pT" onblur="checkNull(this)" name="密码">
+        <span id="passwordError"></span>
+            <br>
+            <h3> 验证码 </h3>
+            <!--src为图片生成的Servlet,onclick实现函数变换img的src-->
+            <img src="servlet/CreateVerifyCodeImage.do" onclick="changeCode()" id="verifyCode"
+                 title="看不清，换一个">
+            <!--用户输入-->
+            <input type="text" name="验证码" id="userCode" onblur="checkNull(this) ">
+        <span id="userCodeError"></span>
+            <br/>
+            <p  style="color: #ffffff"><input type="checkbox" checked="checked" id="checkBox" />一周内免登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.html">免费注册</a></p>
+            <input type="button" value="确认" class="sB" onclick="ajaxCheckLogin()">
+            <input type="reset" value="清空" class="rB">
+            <p id="checkError"></p>
+    </div>
+</center>
+</body>
+<script>
+
+
+</script>
+</html>

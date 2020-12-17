@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script type="text/javascript" src="js/login.js"></script>
+</head>
+<script>
+    var xmlHttpRequest = new XMLHttpRequest();
+
+</script>
+<body>
+
+<center>
+    <div class="box">
+            <input type="text" placeholder="username" name="userName" class="uT">
+            <br>
+            <input type="text" placeholder="password" name="password" class="pT">
+            <br>
+            <h3> 验证码 </h3>
+            <!--src为图片生成的Servlet,onclick实现函数变换img的src-->
+            <img src="servlet/CreateVerifyCodeImage.do" onclick="changeCode()" id="verifyCode"
+                 title="看不清，换一个">
+            <!--用户输入-->
+            <input type="text" name="userCode" id="userCode">
+            <br/>
+            <p  style="color: #ffffff"><input type="checkbox" checked="checked" name="checkBox"/>一周内免登录</p>
+            <input type="button" value="确认" class="sB">
+            <input type="reset" value="清空" class="rB">
+    </div>
+</center>
+</body>
+</html>

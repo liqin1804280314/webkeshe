@@ -1,0 +1,20 @@
+img{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+p{
+    font-size: 22px;
+}
+.word {
+    margin-left: 40%;
+    margin-top: -25%;
+}
+.info{
+    color: red;
+}
+#showNum{
+    color: red;
+}
+href{
+    color: red;
+}

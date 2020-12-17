@@ -1,0 +1,160 @@
+#search {
+    margin-left: 20%;
+}
+
+#searchForm input[type=text] {
+    margin-right: 10px;
+    width: 112px;
+}
+
+#searchForm {
+    margin-top: 2%;
+    margin-left: 20px;
+
+}
+
+#bt {
+    margin-top: -22px;
+    margin-left: 530px;
+}
+
+#bt a {
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+#btSearch {
+    background: dodgerblue;
+    border: solid 5px dodgerblue;
+}
+
+#btClear {
+    background: orangered;
+    border: solid 5px orangered;
+}
+
+#btAdd {
+    background: #009688;
+    border: solid 5px #009688;
+}
+
+#btDelete {
+    background: orange;
+    border: solid 5px orange;
+}
+
+#btUpdate {
+    background: #0099cc;
+    border: solid 5px #0099cc;
+}
+
+table {
+    margin-top: 20px;
+    margin-left: 21%;
+    text-align: center;
+}
+
+thead {
+    background: #0099cc;
+    color: #ffffff
+}
+
+.tr_hover {
+    background: #ffffcc;
+}
+
+.paging {
+    margin-top: 10px;
+    margin-left: 21%;
+}
+
+.pageNav {
+    margin-top: -20px;
+    margin-left: 660px;
+}
+
+#pageNumber {
+    color: red;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.tr_select {
+    background: grey;
+}
+
+.input-group {
+    width: 300px;
+    margin-left: 40px;
+    margin-top: 11px;
+}
+
+.black_overlay {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(187, 184, 184);
+    z-index: 1001;
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.white_content {
+    display: none;
+    position: absolute;
+    width: 390px;
+    border: 6px solid lightblue;
+    z-index: 1002;
+    overflow: auto;
+}
+.signBtn {
+    width: 250px;
+    height: 40px;
+    border-radius: 3px;
+    color: orange;
+    opacity: 0.5;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    margin-left: 50px;
+    margin-top: 20px;
+}
+p {
+    color: red;
+    margin-left: 50px;
+}
+input[type="radio"]{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#updateDiv span{
+    font-size: 10px;
+    color: #0f0f0f;
+}
+input[type="button"]{
+    margin-top: 20px;
+}
+#updateDiv form{
+    border: 1px solid orange;
+}
+ul {
+    width: 500px;
+    right: 0px;
+    top: 17px;
+    list-style: none;
+    position: absolute;
+    font-size: 16px;
+
+}
+
+li {
+    display: inline-block;
+    *display: inline-block;
+    *zoom: 1;
+    color:#323232;
+}

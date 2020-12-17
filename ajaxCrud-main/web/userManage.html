@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/userManage.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/userManage.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+</head>
+<body>
+<div id="pageBody">
+    <img src="file/mainHead.png" alt="1">
+    <ul>
+        <li><a href="main.jsp">首页</a></li>
+        <li>|</li>
+        <li><a href="getDownloadList.do">资源下载</a></li>
+        <li>|</li>
+        <li><a href="userManage.html">用户管理</a></li>
+        <li>|</li>
+        <li><a href="resourceManage.jsp">资源管理</a></li>
+        <li>|</li>
+        <li><a href="profile.jsp">个人中心</a></li>
+    </ul>
+    <div id="search">
+        <form id="searchForm">
+            <input type="text" name="username" placeholder="输入用户名"/>
+            <input type="text" name="chrName" placeholder="输入姓名"/>
+            <input type="text" name="email" placeholder="输入邮箱地址"/>
+            <input type="text" name="provinceName" placeholder="输入省份"/>
+            <input type="reset" id="resetBtn" hidden>
+        </form>
+        <div id="bt">
+            <a href="#" id="btSearch"><span class="glyphicon glyphicon-search"></span>查找&nbsp;</a>
+            <a href="#" id="btClear"><span class="glyphicon glyphicon-remove"></span>清空</a>
+            <a href="#" id="btAdd" ><span
+                    class="glyphicon glyphicon-plus"></span>增加</a>
+            <a href="#" id="btDelete"><span class="glyphicon glyphicon-trash"></span>删除</a>
+            <a href="#" id="btUpdate"><span class="glyphicon glyphicon-edit"></span>修改</a>
+        </div>
+    </div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th width="40">&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="ckAll" title="选择"/></th>
+            <th id="sortByUserName" width="170px" data="username">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-sort"
+                                                                      id="usernameSort"></span></th>
+            <th width="110">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中文名</th>
+            <th width="230">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱</th>
+            <th width="70" id="sortByProvinceName" data="provinceName">&nbsp;&nbsp;&nbsp;&nbsp;省份&nbsp;&nbsp;<span
+                    class="glyphicon glyphicon-sort" id="provinceSort"></span></th>
+            <th width="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;城市</th>
+            <th width="120">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="paging">
+        <div class="pageSize">每页
+            <select id="pageSize">
+                <option selected>5</option>
+                <option>10</option>
+                <option>20</option>
+            </select>条数据 , 共
+            <span id="total"></span>条数据，
+            <span id="pageNumber">1</span>页/<span id="pageCount"></span>页
+        </div>
+        <div class="pageNav">
+            <a href="#" id="first">首页</a>
+            <a href="#" id="back">上一页</a>
+            <a href="#" id="next">下一页</a>
+            <a href="#" id="last">尾页</a>
+        </div>
+    </div>
+    <div id="fade" class="black_overlay" onclick="CloseDiv('MyDiv','fade');"></div>
+    <div id="MyDiv" class="white_content">
+        <div style="text-align: right;height: 20px;">
+            <span style="font-size: 24px;cursor: pointer;" title="点击关闭" onclick="CloseDiv('MyDiv','fade')">x</span>
+        </div>
+        <form id="userInfo">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+                <input type="text" name="userName" placeholder="用户名" class="form-control"
+                       aria-describedby="basic-addon1" id="userName" alt="用户名">
+            </div>
+            <p id="userNameError"></p>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-user"></span></span>
+                <input type="text" placeholder="真实姓名" name="chrName" class="form-control"
+                       aria-describedby="basic-addon2" alt="真实姓名" id="trueName" >
+            </div>
+            <p id="trueNameError"></p>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3"><span
+                        class="glyphicon glyphicon-envelope"></span></span>
+                <input type="text" placeholder="邮箱" name="email" class="form-control" aria-describedby="basic-addon3"
+                       id="email" alt="邮箱" >
+            </div>
+            <p id="emailError"></p>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon4"><span class="glyphicon glyphicon-globe"></span></span>
+                <select class="form-control" aria-describedby="basic-addon4" id="province" alt="省份">
+                    <option value="">请选择省份</option>
+                </select>
+            </div>
+            <p id="provinceError"></p>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon5"><span class="glyphicon glyphicon-globe"></span></span>
+                <select class="form-control" disabled="disabled" aria-describedby="basic-addon5" id="city" alt="城市">
+                    <option value="">请选择城市</option>
+                </select>
+            </div>
+            <p id="cityError"></p>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon6"><span class="glyphicon glyphicon-lock"></span></span>
+                <input type="password" name="password" placeholder="密码" alt="密码" class="form-control"
+                       aria-describedby="basic-addon6" id="password" >
+            </div>
+            <p id="passwordError"></p>
+
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon7"><span class="glyphicon glyphicon-lock"></span></span>
+                <input type="password" placeholder="确认密码" alt="确认密码" class="form-control"
+                       aria-describedby="basic-addon7" id="ensurePassword">
+            </div>
+            <p id="ensurePasswordError"></p>
+            <input type="button" value="确&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定" class="signBtn" onclick="actionSubmit()">
+            <p id="registerError"></p>
+        </form>
+    </div>
+    <div id="updateDiv" class="white_content">
+        <div style="text-align: right;height: 20px;">
+            <span style="font-size: 24px;cursor: pointer;" title="点击关闭" onclick="CloseDiv('updateDiv','fade')">x</span>
+        </div>
+        <form>
+            <input type="radio" name="resetWay" value="userName"><span>根据用户名前四位重置</span>
+            <input type="radio" name="resetWay" value="email"><span>根据邮箱前六位重置</span>
+            <br>
+       <center><input type="button" id="resetPassword" value="重置密码"></center>
+        </form>
+        <form >
+            <input type="radio" name="right" value="管理员"><span>设置为管理员</span>
+            <input type="radio" name="right" value="普通用户"><span>设置为普通用户</span>
+            <br>
+          <center><input type="button" id="manageRight" value="分配权限"></center>
+        </form>
+        <center><input type="button" value="禁用用户" id="disabledUser"></center>
+    </div>
+</div>
+</body>
+
+</html>

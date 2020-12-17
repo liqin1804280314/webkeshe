@@ -1,0 +1,31 @@
+.name{
+    font-weight: bold;
+    margin-top: -80px;
+    margin-left: 10%;
+    font-size: 20px;
+}
+.flag{
+    width: 100px;
+    height: 100px;
+}
+.box{
+    margin-left: 5%;
+}
+.size{
+    padding-left: 10%;
+}
+.description{
+    padding-left: 10%;
+}
+.star {
+    width: 20px;
+    height: 20px;
+}
+input {
+    width: 130px;
+    height: 50px;
+    margin-left: 20%;
+    margin-top: -20%;
+    border:2px solid limegreen;
+    color: limegreen;
+}
